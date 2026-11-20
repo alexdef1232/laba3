@@ -1,4 +1,5 @@
-﻿using System.Text;
+namespace labs3.Models;
+using System.Text;
 using labs3.Models;
 
 public sealed class Sentence
