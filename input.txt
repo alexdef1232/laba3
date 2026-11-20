@@ -1,0 +1,11 @@
+﻿Привет! Как дела?
+Это тестовый текст на русском языке.
+Hello world! How are you?
+This is a simple English sentence.
+Сегодня хорошая погода, и мы идём гулять в парк.
+Программирование помогает решать сложные задачи.
+Почему многие студенты изучают программирование?
+Programming helps people solve complex problems.
+Why do many students learn programming?
+Язык CSharp позволяет создавать современные приложения.
+The CSharp language allows developers to create modern applications.

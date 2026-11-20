@@ -1,0 +1,45 @@
+﻿namespace labs3.Parsers;
+using labs3.Models;
+using labs3.Parsers;
+using System.Text.RegularExpressions;
+
+public sealed class RegexParser : ITextParser
+{
+    private static readonly Regex TokenRegex = new(
+        @"[A-Za-zА-Яа-яЁё]+|[^\sA-Za-zА-Яа-яЁё]",
+        RegexOptions.Compiled);
+
+    public Text Parse(string content)
+    {
+        ArgumentNullException.ThrowIfNull(content);
+
+        var text = new Text();
+        var sentence = new Sentence();
+
+        foreach (Match match in TokenRegex.Matches(content))
+        {
+            string value = match.Value;
+
+            if (char.IsLetter(value[0]))
+            {
+                sentence.Add(new Words(value));
+            }
+            else
+            {
+                sentence.Add(new Punctuation(value));
+
+                if (value is "." or "!" or "?" or "…")
+                {
+                    if (sentence.Tokens.Count > 0)
+                        text.Add(sentence);
+                    sentence = new Sentence();
+                }
+            }
+        }
+
+        if (sentence.Tokens.Count > 0)
+            text.Add(sentence);
+
+        return text;
+    }
+}
