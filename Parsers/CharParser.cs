@@ -1,4 +1,4 @@
-﻿namespace labs03.Parsers;
+﻿namespace labs3.Parsers;
 using labs3.Models;
 using labs3.Parsers;
 using System.Text;
