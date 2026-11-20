@@ -26,7 +26,7 @@ public sealed class CharParser : ITextParser
 
         foreach (char c in content)
         {
-            if (char.IsLetter(c))
+            if (char.IsLetterOrDigit(c) || c == '-' || c == '\'')
             {
                 buffer.Append(c);
                 continue;
