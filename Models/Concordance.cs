@@ -20,6 +20,6 @@ namespace labs3.Models
         }
 
         public override string ToString()
-            => $"{Word}. {Frequency}:{string.Concat(LineNumbers)}";
+         => $"{Word}. {Frequency}: {string.Join(" ", LineNumbers)}";
     }
 }
